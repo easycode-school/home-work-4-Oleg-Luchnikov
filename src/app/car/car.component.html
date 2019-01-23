@@ -1,0 +1,30 @@
+<div class="car-template">
+  <div class="car-img">
+    <img src="../../assets/img/car-image.jpeg" alt="">
+    <div class="btn-wrapper">
+      <button class="drive-btn" (click)="drive()">Поехали</button>
+      <button *ngIf="fuelValue < 10" class="refuelbtn" (click)="fill()">Заправиться</button>
+    </div>
+  </div>
+  <div class="car-info">
+    <span class="car-name">
+      {{ carName }}
+    </span>
+    <span>
+      Пробег: {{ mileage }}
+    </span>
+    <span>
+      Объем бензобака: {{ fuelTankCapacity }}
+    </span>
+    <span>
+      Количество топлива: {{fuelValue}}
+    </span>
+    <ul>
+      <li *ngFor="let item of characteristics">{{ item }}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="alert-box" *ngIf="fuelValue < 10">
+ Вам нужно заправиться
+</div>

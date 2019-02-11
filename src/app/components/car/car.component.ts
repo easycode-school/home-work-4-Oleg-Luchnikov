@@ -19,17 +19,22 @@ export class CarComponent implements OnInit {
   ngOnInit() {
   }
 
-  drive() {
+  /**
+   * Метод описывающий поездку машины при котором меняется значение топлива и пробега
+   */
+  drive(): void {
     if (this.fuelValue <= 0) {
       this.fuelValue = 0;
-      this.mileage = this.mileage;
     } else {
       this.fuelValue -= 100;
       this.mileage += 100;
     }
   }
 
-  fill() {
+  /**
+   * Заправка обновляем количество топлива в переменной fuelValue
+   */
+  fill(): void {
     this.fuelValue += 200;
   }
 
